@@ -1,0 +1,17 @@
+# Node/JS
+node_modules/
+npm-debug.log*
+yarn*.log
+dist/
+build/
+.DS_Store
+
+# Expo/React Native
+.expo/
+.expo-shared/
+*.keystore
+*.jks
+
+# Env
+.env
+.env.*
