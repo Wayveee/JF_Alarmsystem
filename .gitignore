@@ -1,16 +1,20 @@
-# Node/JS
+# Node / JS
 node_modules/
-npm-debug.log*
-yarn*.log
 dist/
 build/
-.DS_Store
+npm-debug.log*
+yarn*.log
+pnpm-debug.log*
 
-# Expo/React Native
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Expo / RN
 .expo/
 .expo-shared/
-*.keystore
-*.jks
 
 # Env
 .env
