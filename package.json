@@ -1,0 +1,17 @@
+{
+  "name": "jf-alarmsystem",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Jugendfeuerwehr Alarmsystem – Monorepo root",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix Alarm_Server && npm install --prefix Web_Leitstelle && npm install --prefix Mobile_App",
+    "dev": "concurrently --names \"Server,Web\" --prefix-colors \"red,blue\" \"npm run start:server\" \"npm run start:web\"",
+    "start:server": "npm start --prefix Alarm_Server",
+    "start:web": "npm run dev --prefix Web_Leitstelle",
+    "start:mobile": "npm start --prefix Mobile_App",
+    "build:web": "npm run build --prefix Web_Leitstelle"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
