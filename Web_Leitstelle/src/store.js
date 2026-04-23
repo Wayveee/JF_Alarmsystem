@@ -214,7 +214,7 @@ export function useStore() {
 
   const resetAll = useCallback(() => {
     localStorage.clear();
-    location.reload();
+    window.location.reload();
   }, []);
 
   const exportAll = useCallback(() => {
