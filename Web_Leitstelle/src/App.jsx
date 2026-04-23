@@ -46,12 +46,14 @@ const defaultQuestions = [
   { key: "hinweise", label: "Hinweise (Zufahrt, Besonderheiten)", type: "textarea", required: false },
 ];
 
+const SERVER_URL = (import.meta.env.VITE_SERVER_URL || 'http://localhost:3000').replace(/\/$/, '');
+
 const defaultSettings = {
   soundEnabled: true,
   volume: 0.8,
   tone: 'beep',    // 'beep' | 'chime' | 'custom'
   customTone: null,
-  appInstallUrl: 'http://localhost:3000' // oder Landing-Page/Store-Link
+  appInstallUrl: '' // Landing-Page oder Store-Link für den App-QR-Code
 };
 
 function useLocalStorage(key, initialValue) {
@@ -114,7 +116,7 @@ export default function App() {
     } catch {}
     // Push an Alarm-Server (lokal)
     try {
-      await fetch('http://localhost:3000/alarm', {
+      await fetch(`${SERVER_URL}/alarm`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
